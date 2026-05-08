@@ -65,3 +65,4 @@ npm run build
 - **Animations**: Fade-in-up animations on scroll using Framer Motion
 - **Professional Tone**: Authoritative yet accessible copy using "We"
 - **Premium Feel**: Dark theme with gold accents for exclusivity
+# uWarden
