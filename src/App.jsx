@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -12,58 +13,45 @@ import Footer from './components/Footer';
 import More from './components/More';
 import SpecialOffer from './components/SpecialOffer';
 
-function App() {
-  const [currentPage, setCurrentPage] = useState(() => {
-    // Get current page from URL
-    const path = window.location.pathname;
-    if (path === '/special') return 'special';
-    if (path === '/more') return 'more';
-    return 'home';
-  });
+function Home() {
+  const navigate = useNavigate();
+  
+  return (
+    <>
+      <Hero />
+      <WhyChooseUs />
+      <PrivateCoaching />
+      <Testimonials />
+      <BusinessConsultIntro />
+      <Pricing />
+      <Booking />
+      <SpecialOfferButton navigateToPage={navigate} />
+      <Footer />
+    </>
+  );
+}
 
-  const navigateToPage = (page) => {
-    setCurrentPage(page);
-    window.scrollTo(0, 0);
-    
-    // Update URL without page reload
-    const url = page === 'home' ? '/' : `/${page}`;
-    window.history.pushState({}, '', url);
-  };
-
-  // Handle browser back/forward buttons
-  useEffect(() => {
-    const handlePopState = () => {
-      const path = window.location.pathname;
-      if (path === '/special') setCurrentPage('special');
-      else if (path === '/more') setCurrentPage('more');
-      else setCurrentPage('home');
-    };
-
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
+function AppContent() {
+  const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white">
-      <Header currentPage={currentPage} navigateToPage={navigateToPage} />
-      {currentPage === 'home' ? (
-        <>
-          <Hero />
-          <WhyChooseUs />
-          <PrivateCoaching />
-          <Testimonials />
-          <BusinessConsultIntro />
-          <Pricing />
-          <Booking />
-          <SpecialOfferButton navigateToPage={navigateToPage} />
-          <Footer />
-        </>
-      ) : currentPage === 'special' ? (
-        <SpecialOffer />
-      ) : (
-        <More />
-      )}
+      <Header currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} navigateToPage={navigate} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/special" element={<SpecialOffer />} />
+        <Route path="/more" element={<More />} />
+      </Routes>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
