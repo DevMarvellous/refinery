@@ -83,7 +83,7 @@ const Header = ({ currentPage, navigateToPage }) => {
                     Booking
                   </button>
                   <button
-                    onClick={() => scrollToSection('birthday-offer')}
+                    onClick={() => handleNavigation('special')}
                     className="relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-1 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 flex items-center space-x-1"
                   >
                     <Gift className="w-4 h-4" />
@@ -105,7 +105,7 @@ const Header = ({ currentPage, navigateToPage }) => {
                     Home
                   </button>
                   <button
-                    onClick={() => scrollToSection('birthday-offer')}
+                    onClick={() => handleNavigation('special')}
                     className="relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-1 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 flex items-center space-x-1"
                   >
                     <Gift className="w-4 h-4" />
@@ -167,7 +167,7 @@ const Header = ({ currentPage, navigateToPage }) => {
                       Book Now
                     </button>
                     <button
-                      onClick={() => scrollToSection('birthday-offer')}
+                      onClick={() => handleNavigation('special')}
                       className="relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-2 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 flex items-center space-x-1 w-full"
                     >
                       <Gift className="w-4 h-4" />
@@ -183,7 +183,7 @@ const Header = ({ currentPage, navigateToPage }) => {
                       Business Consult
                     </button>
                     <button
-                      onClick={() => scrollToSection('birthday-offer')}
+                      onClick={() => handleNavigation('special')}
                       className="relative bg-gradient-to-r from-yellow-400 to-orange-400 text-black px-3 py-2 rounded-full font-bold text-sm hover:shadow-lg transition-all duration-300 flex items-center space-x-1 w-full"
                     >
                       <Gift className="w-4 h-4" />

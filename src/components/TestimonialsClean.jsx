@@ -21,17 +21,17 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Chen',
-      company: 'TechVentures Inc.',
-      position: 'CEO',
-      content: 'The Refinery transformed our business strategy completely. Within six months, we saw a 150% increase in revenue and expanded into three new markets. Their insights are invaluable.',
+      name: 'Entrepreneur & Business Owner',
+      company: '',
+      position: '',
+      content: 'Working with P.Sam completely transformed my mindset and business approach. Before coaching, I had ideas but lacked structure, direction, and profitability. Through his guidance, I learned how to build a sustainable business model, position my brand properly, and create systems that increased both impact and revenue. What stood out most was his ability to combine purpose, leadership, strategy, and wealth creation together. My confidence improved, my business became more organized, and I began attracting better opportunities and clients. I now operate with clarity, vision, and measurable growth.',
       rating: 5,
     },
     {
-      name: 'Michael Rodriguez',
-      company: 'Global Logistics Co.',
-      position: 'Managing Director',
-      content: 'Working with The Refinery was a game-changer. They helped us streamline operations and identify new revenue streams we hadn\'t considered. Professional, insightful, and results-driven.',
+      name: 'Startup Founder',
+      company: '',
+      position: '',
+      content: 'P.Sam\'s business consulting helped me move from confusion to clarity. I struggled with pricing, branding, customer retention, and turning my skills into consistent income. After implementing strategies from our sessions, my business became more structured, profitable, and scalable. Beyond profit, he helped me understand how to build a business that creates real impact and long-term legacy. Every coaching session was practical, insightful, and transformational.',
       rating: 5,
     },
   ];

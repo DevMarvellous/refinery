@@ -7,9 +7,10 @@ import BusinessConsultIntro from './components/BusinessConsultIntro';
 import Pricing from './components/Pricing';
 import Testimonials from './components/TestimonialsClean';
 import Booking from './components/Booking';
-import BirthdayOffer from './components/BirthdayOfferNew';
+import SpecialOfferButton from './components/SpecialOfferButton';
 import Footer from './components/Footer';
 import More from './components/More';
+import SpecialOffer from './components/SpecialOffer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -31,9 +32,11 @@ function App() {
           <BusinessConsultIntro />
           <Pricing />
           <Booking />
-          <BirthdayOffer />
+          <SpecialOfferButton navigateToPage={navigateToPage} />
           <Footer />
         </>
+      ) : currentPage === 'special' ? (
+        <SpecialOffer />
       ) : (
         <More />
       )}
