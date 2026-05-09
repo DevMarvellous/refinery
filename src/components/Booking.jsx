@@ -4,8 +4,8 @@ import { FileText, ArrowRight, Calendar, Clock, Sparkles } from 'lucide-react';
 
 const Booking = () => {
   const handleBookingClick = () => {
-    // Placeholder URL for Google Form
-    window.open('https://forms.google.com/example-form', '_blank');
+    // Google Form link for business consultation booking
+    window.open('https://forms.gle/raWBzwtBn2Q2NiXA6', '_blank');
   };
 
   return (

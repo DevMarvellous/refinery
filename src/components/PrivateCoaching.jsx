@@ -247,7 +247,7 @@ const PrivateCoaching = () => {
               <span className="text-slate-400 font-medium">/ month</span>
             </div>
             <button
-              onClick={() => window.open('https://forms.gle/your-id', '_blank')}
+              onClick={() => window.open('https://forms.gle/UTuiYJ2enHoR8cKu5', '_blank')}
               className="w-full bg-navy hover:bg-navy-dark text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-navy/20"
             >
               Apply for Private Coaching
