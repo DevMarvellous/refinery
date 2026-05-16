@@ -243,7 +243,7 @@ const SpecialOffer = ({ navigateToPage }) => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => window.open('https://wa.me/YOUR_WHATSAPP_NUMBER', '_blank')}
+              onClick={() => window.open('https://wa.me/2349051014496', '_blank')}
               className="bg-gradient-to-r from-royal-blue to-medium-blue text-white px-8 sm:px-12 py-4 sm:py-6 rounded-xl font-bold text-lg sm:text-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-2 mx-auto"
             >
               <span>Tap link below and secure your access now</span>
