@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -25,7 +25,7 @@ function Home() {
       <BusinessConsultIntro />
       <Pricing />
       <Booking />
-      <SpecialOfferButton navigateToPage={navigate} />
+      <SpecialOfferButton navigateToPage={(page) => navigate(page === 'home' ? '/' : `/${page}`)} />
       <Footer />
     </>
   );
@@ -35,13 +35,25 @@ function AppContent() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  // Helper to handle navigation consistently
+  const handleNavigate = (page) => {
+    if (page === 'home') {
+      navigate('/');
+    } else {
+      navigate(`/${page}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      <Header currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} navigateToPage={navigate} />
+      <Header 
+        currentPage={location.pathname === '/' ? 'home' : location.pathname.slice(1)} 
+        navigateToPage={handleNavigate} 
+      />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/special" element={<SpecialOffer />} />
-        <Route path="/more" element={<More />} />
+        <Route path="/special" element={<SpecialOffer navigateToPage={handleNavigate} />} />
+        <Route path="/more" element={<More navigateToPage={handleNavigate} />} />
       </Routes>
     </div>
   );
@@ -49,7 +61,7 @@ function AppContent() {
 
 function App() {
   return (
-    <Router>
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <AppContent />
     </Router>
   );

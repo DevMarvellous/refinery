@@ -22,12 +22,12 @@ const SpecialOfferButton = ({ navigateToPage }) => {
           </h2>
           
           <p className="text-lg sm:text-xl text-slate-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Access transformational entrepreneurial materials worth ₦170,000+ at a special birthday price. Limited spots available.
+            Access transformational entrepreneurial materials worth ₦300,000 at a special birthday price. Limited spots available.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <div className="text-center">
-              <p className="text-3xl sm:text-4xl font-bold text-gold">₦170,000+</p>
+              <p className="text-3xl sm:text-4xl font-bold text-gold">₦300,000</p>
               <p className="text-sm text-slate-500 font-medium uppercase tracking-tighter">Total Value</p>
             </div>
             <div className="hidden sm:block w-px h-12 bg-slate-200"></div>
